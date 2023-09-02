@@ -59,14 +59,10 @@ let carsMockData = [
     }
 ]
 
-/** Create GET API. API should return let carsMockData*/
 app.get('/read', (req, res) => {
     res.send(carsMockData);
 });
 
-/** Create POST API. Get the new car data from react. 
- *      Check if car with id exists. If Yes return 500. With message 'Car already exists'
- *      If there is no car with the id, add the new car to  carsMockData and return carsMockData as response */
 app.post('/create', (req, res) => {
 
     let id = parseInt(req.body.id);
@@ -94,9 +90,6 @@ app.post('/create', (req, res) => {
     }
 });
 
-/** Create PUT API. 
- *  Check if car with id exists. If No return 500 with error 'No car with given id exist'. 
- *  If there is car with the requested id, update that car's data in 'carsMockData' and return 'carsMockData' */
 app.put('/update', (req, res) => {
 
     let id = parseInt(req.body.id);
@@ -119,10 +112,6 @@ app.put('/update', (req, res) => {
     }
 });
 
-/** Create Delete API. 
- *  Check if car with id exists. If No return 500. With message 'No car with give id exists'
- *  If there is car with the requested id. Delete that car from 'carsMockData' and return 'carsMockData'
-*/
 app.delete('/remove', (req, res) => {
 
     let id = parseInt(req.body.id);
